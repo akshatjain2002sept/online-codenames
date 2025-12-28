@@ -1,0 +1,132 @@
+/* Cold War Dossier Theme
+ * Inspired by classified documents, typewriters, and espionage
+ * Uses Special Elite for headings, IBM Plex Mono for body
+ */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Dossier color palette */
+  --color-paper: #f4f1e8;
+  --color-paper-dark: #e8e4d9;
+  --color-ink: #1a1814;
+  --color-ink-faded: #4a463d;
+
+  /* Team colors - saturated and distinct */
+  --color-red-team: #c41e3a;
+  --color-red-team-light: #e85a6f;
+  --color-red-team-dark: #8b1528;
+  --color-red-team-bg: #fde8eb;
+
+  --color-blue-team: #1e4a8b;
+  --color-blue-team-light: #4a7bc4;
+  --color-blue-team-dark: #0d2847;
+  --color-blue-team-bg: #e8f0fd;
+
+  /* Neutral/Bystander - tan/manila */
+  --color-neutral: #c4a77d;
+  --color-neutral-light: #e0d4bc;
+  --color-neutral-dark: #8b7355;
+
+  /* Assassin - stark black with red accent */
+  --color-assassin: #1a1a1a;
+  --color-assassin-accent: #8b0000;
+
+  /* UI colors */
+  --color-bg: #2a2622;
+  --color-bg-elevated: #3a3632;
+  --color-border: #5a564d;
+  --color-text: #f4f1e8;
+  --color-text-muted: #a8a49a;
+
+  /* Card states */
+  --color-card-unrevealed: #d4cfc2;
+  --color-card-revealed-overlay: rgba(0, 0, 0, 0.7);
+
+  /* Fonts */
+  --font-display: 'Special Elite', 'Courier New', monospace;
+  --font-body: 'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Shadows */
+  --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-card-hover: 0 4px 8px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
+  --shadow-elevated: 0 8px 16px rgba(0, 0, 0, 0.4);
+
+  /* Timing */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+}
+
+/* Base styles */
+html {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+/* Utility classes for team colors */
+.team-red {
+  --team-color: var(--color-red-team);
+  --team-color-light: var(--color-red-team-light);
+  --team-color-dark: var(--color-red-team-dark);
+  --team-bg: var(--color-red-team-bg);
+}
+
+.team-blue {
+  --team-color: var(--color-blue-team);
+  --team-color-light: var(--color-blue-team-light);
+  --team-color-dark: var(--color-blue-team-dark);
+  --team-bg: var(--color-blue-team-bg);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-neutral);
+  outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-neutral);
+  color: var(--color-ink);
+}
