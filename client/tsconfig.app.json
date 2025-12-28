@@ -27,8 +27,8 @@
     /* Path aliases */
     "baseUrl": ".",
     "paths": {
-      "@shared/*": ["../shared/*"]
+      "@shared/*": ["./src/shared/*"]
     }
   },
-  "include": ["src", "../shared"]
+  "include": ["src"]
 }

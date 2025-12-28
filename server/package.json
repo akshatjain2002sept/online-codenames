@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "codenames-server",
   "module": "index.ts",
   "type": "module",
   "private": true,
@@ -7,6 +7,9 @@
     "dev": "bun --hot index.ts",
     "start": "bun index.ts",
     "test": "bun test"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
   },
   "devDependencies": {
     "@types/bun": "latest"
