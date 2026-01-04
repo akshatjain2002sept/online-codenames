@@ -126,6 +126,18 @@ export default function Home() {
           >
             JOIN ROOM
           </button>
+
+          {/* Validation messages */}
+          {joinCode.length >= 1 && !name.trim() && (
+            <div className="rounded border border-neutral/50 bg-neutral/10 p-2 text-center text-sm text-neutral">
+              Please enter your name above to join a room
+            </div>
+          )}
+          {name.trim() && joinCode.length > 0 && joinCode.length < 6 && (
+            <div className="rounded border border-neutral/50 bg-neutral/10 p-2 text-center text-sm text-neutral">
+              Room code must be 6 characters
+            </div>
+          )}
         </div>
       </div>
     </main>
