@@ -110,8 +110,13 @@ export default function Home() {
               value={joinCode}
               onChange={(e) => setJoinCode(e.target.value.toUpperCase())}
               placeholder="Enter 6-letter code"
-              className="w-full rounded border border-border bg-bg-elevated px-4 py-3 text-center font-display text-2xl tracking-widest text-text placeholder:text-text-muted placeholder:text-base placeholder:tracking-normal focus:border-neutral focus:outline-none"
+              className="w-full rounded border border-border bg-bg-elevated px-4 py-3 text-center font-display text-xl sm:text-2xl tracking-widest text-text placeholder:text-text-muted placeholder:text-base placeholder:tracking-normal focus:border-neutral focus:outline-none"
               maxLength={6}
+              inputMode="text"
+              autoCapitalize="characters"
+              autoComplete="off"
+              autoCorrect="off"
+              spellCheck="false"
             />
           </div>
           <button

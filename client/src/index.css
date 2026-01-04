@@ -71,6 +71,10 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Mobile Safari optimizations */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
 }
 
 #root {
@@ -129,4 +133,40 @@ h1, h2, h3, h4, h5, h6 {
 ::selection {
   background-color: var(--color-neutral);
   color: var(--color-ink);
+}
+
+/* Mobile Safari button and input optimizations */
+button {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+  /* Prevent webkit appearance styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  /* Prevent webkit appearance styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Prevent zoom on focus in iOS Safari */
+  font-size: 16px;
+}
+
+/* Ensure buttons remain clickable on touch devices */
+button:disabled {
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+/* Improve touch target size for better mobile UX */
+@media (hover: none) and (pointer: coarse) {
+  button {
+    min-height: 44px; /* iOS recommended touch target size */
+    min-width: 44px;
+  }
 }
